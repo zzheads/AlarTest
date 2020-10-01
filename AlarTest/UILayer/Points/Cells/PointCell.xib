@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h78-9E-Ebc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h78-9E-Ebc">
                         <rect key="frame" x="16" y="10.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="TTc-5x-Vfa"/>
@@ -23,12 +23,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLa-fd-HKQ">
-                        <rect key="frame" x="72" y="22.5" width="326" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="72" y="22" width="326" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="fLa-fd-HKQ" firstAttribute="leading" secondItem="h78-9E-Ebc" secondAttribute="trailing" constant="16" id="5H9-4v-iBj"/>
                     <constraint firstItem="fLa-fd-HKQ" firstAttribute="centerY" secondItem="njy-9L-14p" secondAttribute="centerY" id="7EZ-E8-gOS"/>
@@ -39,6 +40,7 @@
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fLa-fd-HKQ" secondAttribute="bottom" constant="8" id="qkL-60-7s2"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="logoImageView" destination="h78-9E-Ebc" id="pJi-KT-f8S"/>
                 <outlet property="nameLabel" destination="fLa-fd-HKQ" id="THH-Ru-18x"/>

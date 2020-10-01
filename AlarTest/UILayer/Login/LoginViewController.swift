@@ -9,14 +9,17 @@ import UIKit
 
 // MARK: - LoginViewController
 class LoginViewController: BaseViewController<LoginViewModel> {
+    // MARK: - Outlets
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - Lifecycle
     override func setupUI() {
         super.setupUI()
         title = viewModel.title
+        loginButton.backgroundColor = Color.primary
         loginButton.layer.cornerRadius = loginButton.frame.height / 4
         loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
     }

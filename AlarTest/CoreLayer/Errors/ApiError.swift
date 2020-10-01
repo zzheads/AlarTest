@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - AppError
 enum AppError: Error {
     case api(message: String?)
     case serialization(message: String?)

@@ -8,10 +8,12 @@
 
 import Alamofire
 
+// MARK: - WebServiceProtocol
 protocol WebServiceProtocol {
     func fetch<T: Codable>(resource: Resource<T>, completion: @escaping ((Swift.Result<T, Error>) -> Void))
 }
 
+// MARK: - WebService
 final class WebService: WebServiceProtocol {
     static let shared = WebService()
     

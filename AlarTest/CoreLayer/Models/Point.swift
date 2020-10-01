@@ -19,6 +19,7 @@ import Alamofire
 //    "lon": -81.0513611111111
 //}
 
+// MARK: - Point
 class Point: Codable {
     var id: String
     var name: String
@@ -31,6 +32,7 @@ class Point: Codable {
     }
 }
 
+// MARK: - Resource
 extension Point {
     static func page(number: Int = 0, code: String) -> Resource<Page<[Point]>> {
         return Resource(endpoint: .data, method: .get, parameters: ["code": code, "p": number])

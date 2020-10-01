@@ -8,6 +8,7 @@
 
 import Alamofire
 
+// MARK: - Endpoint
 enum Endpoint: String {
     static let base: String = "https://www.alarstudios.com/test/"
     
@@ -19,6 +20,7 @@ enum Endpoint: String {
     }
 }
 
+// MARK: - Resource
 struct Resource<T: Codable> {
     let endpoint    : Endpoint
     let method      : HTTPMethod

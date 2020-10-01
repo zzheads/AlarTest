@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+// MARK: - PointCell
 final class PointCell: UITableViewCell {
     static let nibName = String(describing: PointCell.self)
     static let nib = UINib(nibName: nibName, bundle: nil)

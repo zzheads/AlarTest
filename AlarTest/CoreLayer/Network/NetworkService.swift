@@ -8,12 +8,14 @@
 
 import Foundation
 
+// MARK: - NetworkServiceProtocol
 protocol NetworkServiceProtocol {
     func getCode(username: String, password: String, completion: @escaping ((Result<String, Error>) -> Void))
     func getPoints(code: String, page: Int, completion: @escaping ((Result<Page<[Point]>, Error>) -> Void))
     var isLoading: Bool { get }
 }
 
+// MARK: - NetworkService
 class NetworkService {
     static let shared = NetworkService(webService: WebService.shared)
     
@@ -25,6 +27,7 @@ class NetworkService {
     }
 }
 
+// MARK: - NetworkServiceProtocol
 extension NetworkService: NetworkServiceProtocol {
     func getCode(username: String, password: String, completion: @escaping ((Result<String, Error>) -> Void)) {
         webService.fetch(resource: Auth.code(username: username, password: password),

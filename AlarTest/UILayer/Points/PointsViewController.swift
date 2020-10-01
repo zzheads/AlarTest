@@ -7,16 +7,21 @@
 
 import UIKit
 
+// MARK: - PointsViewController
 class PointsViewController: BaseViewController<PointsViewModel> {
     private struct Constants {
-        static let optimalRowHeight: CGFloat = 40
+        static let optimalRowHeight: CGFloat = 54
     }
     
+    // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Lifecycle
     override func setupUI() {
         super.setupUI()
         title = viewModel.title
+        tableView.rowHeight = Constants.optimalRowHeight
+        tableView.estimatedRowHeight = Constants.optimalRowHeight
         tableView.register(PointCell.nib, forCellReuseIdentifier: PointCell.nibName)
         tableView.dataSource = self
         tableView.delegate = self
@@ -38,6 +43,7 @@ class PointsViewController: BaseViewController<PointsViewModel> {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension PointsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
@@ -54,6 +60,7 @@ extension PointsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension PointsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard indexPath.row > viewModel.points.count - 3 else { return }

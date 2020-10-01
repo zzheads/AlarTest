@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - PointsViewModel
 class PointsViewModel: BaseViewModel {
     private let code: String
     private lazy var loader: Loader = .init(code: code)
@@ -14,9 +15,11 @@ class PointsViewModel: BaseViewModel {
     let title = "Список"
     var points: [Point] = []
     
+    // MARK: - Bindings
     var addPoints: (([IndexPath]) -> Void)?
     var reload: (() -> Void)?
     
+    // MARK: - Lifecycle
     init(code: String) {
         self.code = code
     }
@@ -26,6 +29,7 @@ class PointsViewModel: BaseViewModel {
         getMorePoints()
     }
     
+    // MARK: - Public methods
     func getMorePoints() {
         guard !loader.isLoading else { return }
         loader.getPoints(completion: {

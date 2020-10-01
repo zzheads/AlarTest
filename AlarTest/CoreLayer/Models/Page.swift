@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Page
 class Page<T: Codable>: Codable {
     var status: Status
     var page: Int

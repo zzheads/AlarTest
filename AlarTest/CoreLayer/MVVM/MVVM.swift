@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - ViewModel
 protocol ViewModel {
     var show: ((String?, String?) -> Void)? { get set }
     var showController: ((UIViewController) -> Void)? { get set }
@@ -21,11 +22,13 @@ protocol ViewModel {
     func viewDidDisappear(_ animated: Bool)
 }
 
+// MARK: - ViewController
 protocol ViewController: UIViewController {
     associatedtype ViewModelType: ViewModel
     var viewModel: ViewModelType { get }
 }
 
+// MARK: - BaseViewModel
 class BaseViewModel: NSObject, ViewModel {
     var show: ((String?, String?) -> Void)?
     var showController: ((UIViewController) -> Void)?
@@ -41,6 +44,7 @@ class BaseViewModel: NSObject, ViewModel {
     func viewDidDisappear(_ animated: Bool) {}
 }
 
+// MARK: - BaseViewController
 class BaseViewController<ViewModelType: ViewModel>: UIViewController, ViewController {
     var viewModel: ViewModelType
     

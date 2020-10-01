@@ -7,6 +7,7 @@
 
 import MapKit
 
+// MARK: - PointAnnotation
 class PointAnnotation: NSObject {
     let point: Point
     
@@ -16,6 +17,7 @@ class PointAnnotation: NSObject {
     }
 }
 
+// MARK: - MKAnnotation
 extension PointAnnotation: MKAnnotation {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: point.lat, longitude: point.lon)

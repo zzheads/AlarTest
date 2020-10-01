@@ -16,15 +16,16 @@ class ScreenFactory {
     static let shared: ScreenFactory = .init()
     
     private init() {
-        UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 13), .foregroundColor: Constants.barTintColor], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 13), .foregroundColor: Constants.barTintColor], for: .highlighted)
+        let states: [UIControl.State] = [.normal, .highlighted, .selected]
+        states.forEach({ UIBarButtonItem.appearance().setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 13, weight: .regular), .foregroundColor: Constants.barTintColor], for: $0) })
     }
     
     func mainScreen() -> UINavigationController {
         let controller = UINavigationController(rootViewController: loginViewController())
         controller.navigationBar.barStyle = .black
+        controller.navigationBar.barTintColor = Color.primary
         controller.navigationBar.isTranslucent = true
-        controller.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 15)]
+        controller.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 15, weight: .medium)]
         controller.navigationBar.tintColor = Constants.barTintColor
         return controller
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Status
 enum Status: String, Codable {
     case success = "ok"
     case failure = "error"

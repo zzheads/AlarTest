@@ -7,19 +7,20 @@
 
 import Foundation
 
+// MARK: - PointViewModel
 class PointViewModel: BaseViewModel {
-    private let point: Point
+    let point: Point
+    let annotation: PointAnnotation
     
-    let title = "Точка"
-    
-    var updateView: ((Point) -> Void)?
+    var updateView: (() -> Void)?
     
     init(point: Point) {
         self.point = point
+        self.annotation = PointAnnotation(point: point)
     }
     
     override func didBindUIWithViewModel() {
         super.didBindUIWithViewModel()
-        updateView?(self.point)
+        updateView?()
     }
 }

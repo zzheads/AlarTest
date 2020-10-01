@@ -8,6 +8,7 @@
 
 import Alamofire
 
+// MARK: - Loader
 class Loader {
     let networkService: NetworkServiceProtocol = NetworkService.shared
     
