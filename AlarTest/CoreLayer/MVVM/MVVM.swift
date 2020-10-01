@@ -9,6 +9,8 @@ import UIKit
 
 protocol ViewModel {
     var show: ((String?, String?) -> Void)? { get set }
+    var showController: ((UIViewController) -> Void)? { get set }
+    var present: ((UIViewController, Bool, (() -> Void)?) -> Void)? { get set }
     
     func initialSetup()
     func viewDidLoad()
@@ -26,6 +28,8 @@ protocol ViewController: UIViewController {
 
 class BaseViewModel: NSObject, ViewModel {
     var show: ((String?, String?) -> Void)?
+    var showController: ((UIViewController) -> Void)?
+    var present: ((UIViewController, Bool, (() -> Void)?) -> Void)?
     
     func initialSetup() {}
     func viewDidLoad() {}
@@ -63,6 +67,22 @@ class BaseViewController<ViewModelType: ViewModel>: UIViewController, ViewContro
             [weak self] title, message in
             
             self?.show(title: title, message: message)
+        }
+        
+        viewModel.showController = {
+            [weak self] controller in
+            
+            guard let navigationController = self?.navigationController else {
+                self?.show(controller, sender: self)
+                return
+            }
+            navigationController.pushViewController(controller, animated: true)
+        }
+        
+        viewModel.present = {
+            [weak self] controller, animated, completion in
+            
+            self?.present(controller, animated: animated, completion: completion)
         }
     }
     

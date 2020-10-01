@@ -12,5 +12,5 @@ enum AppError: Error {
     case api(message: String?)
     case serialization(message: String?)
     case badData(message: String?)
-    case noMoreData
+    case badCredentials
 }

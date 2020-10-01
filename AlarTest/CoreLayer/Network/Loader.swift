@@ -6,7 +6,7 @@
 //  Copyright © 2019 Алексей Папин. All rights reserved.
 //
 
-import Foundation
+import Alamofire
 
 class Loader {
     let networkService: NetworkServiceProtocol = NetworkService.shared
@@ -31,6 +31,9 @@ class Loader {
                                         self?.currentPage += 1
                                         
                                     case let .failure(error):
+                                        if let afError = error as? AFError {
+                                            print(afError)
+                                        }
                                         completion(.failure(error))
                                     }
                                  })

@@ -37,7 +37,7 @@ extension NetworkService: NetworkServiceProtocol {
                                 case .success:
                                     completion(.success(auth.code))
                                 case .failure:
-                                    completion(.failure(AppError.api(message: "Bad status")))
+                                    completion(.failure(AppError.badCredentials))
                                 }
                                 
                             case let .failure(error):

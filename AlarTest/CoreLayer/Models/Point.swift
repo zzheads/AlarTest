@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 import Alamofire
 
 //{
@@ -24,6 +25,10 @@ class Point: Codable {
     var country: String
     var lat: CLLocationDegrees
     var lon: CLLocationDegrees
+    
+    var logoUrl: URL? {
+        return URL(string: "https://www.vhv.rs/dpng/d/188-1880556_travel-agency-logo-design-example-image-travel-and.png")
+    }
 }
 
 extension Point {

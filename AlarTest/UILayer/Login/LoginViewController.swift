@@ -14,6 +14,8 @@ class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func setupUI() {
         super.setupUI()
+        title = viewModel.title
+        loginButton.layer.cornerRadius = loginButton.frame.height / 4
         loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
     
