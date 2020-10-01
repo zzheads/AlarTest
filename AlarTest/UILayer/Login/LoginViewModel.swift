@@ -11,6 +11,8 @@ import UIKit
 class LoginViewModel: BaseViewModel {
     private let networkService: NetworkServiceProtocol = NetworkService.shared
     private let screenFactory: ScreenFactory = .shared
+
+    var updateLoadingState: ((Bool) -> Void)?
     
     let title = "Логин"
     
@@ -18,7 +20,8 @@ class LoginViewModel: BaseViewModel {
         guard let username = username, let password = password, !networkService.isLoading else {
             return
         }
-        networkService.getCode(username: username, password: password, completion: {
+        updateLoadingState?(true)
+        self.networkService.getCode(username: username, password: password, completion: {
             [weak self] result in
             
             guard let self = self else { return }
@@ -35,6 +38,7 @@ class LoginViewModel: BaseViewModel {
                     self.show?("Ошибка", error.localizedDescription)
                 }
             }
+            self.updateLoadingState?(false)
         })
     }
 }

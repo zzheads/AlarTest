@@ -7,10 +7,12 @@
 
 import UIKit
 
+// MARK: - LoginViewController
 class LoginViewController: BaseViewController<LoginViewModel> {
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     override func setupUI() {
         super.setupUI()
@@ -21,6 +23,12 @@ class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func bindUIWithViewModel() {
         super.bindUIWithViewModel()
+        viewModel.updateLoadingState = {
+            [weak self] isLoading in
+            
+            isLoading ? self?.activityIndicator.startAnimating() : self?.activityIndicator.stopAnimating()
+            self?.loginButton.isEnabled = !isLoading
+        }
     }
     
     @objc private func login() {
