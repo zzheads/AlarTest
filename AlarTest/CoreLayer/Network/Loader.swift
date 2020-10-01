@@ -13,8 +13,13 @@ class Loader {
     
     public var isLoading: Bool { return self.networkService.isLoading }
     private var currentPage = 1
+    private var code: String
 
-    func getPoints(code: String, completion: @escaping ((Result<[Point], Error>) -> Void)) {
+    init(code: String) {
+        self.code = code
+    }
+    
+    func getPoints(completion: @escaping ((Result<[Point], Error>) -> Void)) {
         networkService.getPoints(code: code,
                                  page: currentPage,
                                  completion: {
