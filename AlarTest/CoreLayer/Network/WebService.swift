@@ -11,6 +11,8 @@ import Alamofire
 // MARK: - WebServiceProtocol
 protocol WebServiceProtocol {
     func fetch<T: Codable>(resource: Resource<T>, completion: @escaping ((Swift.Result<T, Error>) -> Void))
+    @discardableResult
+    func download(url: URL, completion: @escaping ((Result<Data, AFError>) -> Void)) -> DataRequest
 }
 
 // MARK: - WebService
@@ -39,5 +41,10 @@ final class WebService: WebServiceProtocol {
                     completion(.failure(error))
                 }
             }
+    }
+    
+    @discardableResult
+    func download(url: URL, completion: @escaping ((Result<Data, AFError>) -> Void)) -> DataRequest {
+        return AF.request(url).responseData(completionHandler: { completion($0.result) })
     }
 }

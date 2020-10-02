@@ -44,6 +44,8 @@
 		A6307AC0252608CD00DB9D2C /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6307ABF252608CD00DB9D2C /* PointAnnotation.swift */; };
 		A6307AC9252656AA00DB9D2C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6307AC8252656AA00DB9D2C /* Color.swift */; };
 		A6307ACE2526630100DB9D2C /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6307ACD2526630100DB9D2C /* MKMapView.swift */; };
+		A67CD11C2527B50600694EB6 /* ImagesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CD11B2527B50600694EB6 /* ImagesLoader.swift */; };
+		A67CD1212527BA4400694EB6 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67CD1202527BA4300694EB6 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		A6307ABF252608CD00DB9D2C /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		A6307AC8252656AA00DB9D2C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A6307ACD2526630100DB9D2C /* MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
+		A67CD11B2527B50600694EB6 /* ImagesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLoader.swift; sourceTree = "<group>"; };
+		A67CD1202527BA4300694EB6 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		B011A73E982127F9E8C8BE6D /* Pods-AlarTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarTest.release.xcconfig"; path = "Target Support Files/Pods-AlarTest/Pods-AlarTest.release.xcconfig"; sourceTree = "<group>"; };
 		C1331E25B723735B72D7591B /* Pods-AlarTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarTest.debug.xcconfig"; path = "Target Support Files/Pods-AlarTest/Pods-AlarTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +222,7 @@
 				A61F92EE252508D40056A7A9 /* Resource.swift */,
 				A61F92EF252508D40056A7A9 /* Loader.swift */,
 				A61F92F0252508D40056A7A9 /* WebService.swift */,
+				A67CD11B2527B50600694EB6 /* ImagesLoader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				A6307A042525A39800DB9D2C /* UIViewController.swift */,
 				A6307A052525A39800DB9D2C /* UINavigationController.swift */,
 				A6307ACD2526630100DB9D2C /* MKMapView.swift */,
+				A67CD1202527BA4300694EB6 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				A61F92B9252508990056A7A9 /* AppDelegate.swift in Sources */,
 				A61F92F9252508D40056A7A9 /* WebService.swift in Sources */,
 				A6307A7B2525E3D800DB9D2C /* PointsViewController.swift in Sources */,
+				A67CD11C2527B50600694EB6 /* ImagesLoader.swift in Sources */,
 				A6307ACE2526630100DB9D2C /* MKMapView.swift in Sources */,
 				A61F92FC252508D40056A7A9 /* ApiError.swift in Sources */,
 				A61F92F8252508D40056A7A9 /* Loader.swift in Sources */,
@@ -560,6 +567,7 @@
 				A6307AC0252608CD00DB9D2C /* PointAnnotation.swift in Sources */,
 				A6307A5F2525CD8100DB9D2C /* SceneDelegate.swift in Sources */,
 				A6307A2E2525BC8900DB9D2C /* LoginViewModel.swift in Sources */,
+				A67CD1212527BA4400694EB6 /* UIImage.swift in Sources */,
 				A6307AC9252656AA00DB9D2C /* Color.swift in Sources */,
 				A61F92F7252508D40056A7A9 /* Resource.swift in Sources */,
 				A6307AA72526024200DB9D2C /* ScreenFactory.swift in Sources */,

@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h78-9E-Ebc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h78-9E-Ebc">
                         <rect key="frame" x="16" y="10.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="TTc-5x-Vfa"/>
@@ -42,6 +42,8 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="imageViewHeightConstraint" destination="lC0-iy-6WI" id="46M-Iv-fCD"/>
+                <outlet property="imageViewWidthConstraint" destination="TTc-5x-Vfa" id="25W-4v-hcZ"/>
                 <outlet property="logoImageView" destination="h78-9E-Ebc" id="pJi-KT-f8S"/>
                 <outlet property="nameLabel" destination="fLa-fd-HKQ" id="THH-Ru-18x"/>
             </connections>

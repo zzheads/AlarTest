@@ -6,12 +6,14 @@
 //  Copyright © 2019 Алексей Папин. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Alamofire
 
 // MARK: - NetworkServiceProtocol
 protocol NetworkServiceProtocol {
     func getCode(username: String, password: String, completion: @escaping ((Result<String, Error>) -> Void))
     func getPoints(code: String, page: Int, completion: @escaping ((Result<Page<[Point]>, Error>) -> Void))
+    @discardableResult func getImage(url: URL, completion: @escaping ((Result<UIImage, Error>) -> Void)) -> DataRequest
     var isLoading: Bool { get }
 }
 
@@ -51,5 +53,24 @@ extension NetworkService: NetworkServiceProtocol {
     
     func getPoints(code: String, page: Int, completion: @escaping ((Result<Page<[Point]>, Error>) -> Void)) {
         webService.fetch(resource: Point.page(number: page, code: code), completion: completion)
+    }
+    
+    @discardableResult
+    func getImage(url: URL, completion: @escaping ((Result<UIImage, Error>) -> Void)) -> DataRequest {
+        webService.download(url: url, completion: {
+            result in
+            
+            switch result {
+            case let .success(data):
+                guard let image = UIImage(data: data) else {
+                    completion(.failure(AppError.badData(message: "Bad image data")))
+                    return
+                }
+                completion(.success(image))
+                
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        })
     }
 }
